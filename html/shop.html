@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Paws — Shop</title>
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+
+    <!-- SAME STYLE AS INDEX -->
+    <link rel="stylesheet" href="../css/styleiliana.css">
+</head>
+
+<body>
+
+
+<!-- NAV -->
+    <nav class="navbar navbar-expand-lg floating-nav" id="mainNav">
+  <div class="container-fluid px-4">
+
+    <!-- LOGO -->
+    <a class="navbar-brand d-flex align-items-center" href="../index.html">
+      <span class="fs-4">🐾</span>
+      <strong class="ms-2">Happy Paws</strong>
+    </a>
+
+    <!-- HAMBURGER -->
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- MENU -->
+    <div class="collapse navbar-collapse" id="navMenu">
+
+      <!-- LINKS -->
+      <ul class="navbar-nav mx-auto align-items-lg-center gap-3">
+        <li class="nav-item"><a class="nav-link fw-semibold" href="../html/shop.html">Shop</a></li>
+        <li class="nav-item"><a class="nav-link fw-semibold" href="../html/grooming.html">Pet Grooming</a></li>
+        <li class="nav-item"><a class="nav-link fw-semibold" href="../html/petservices.html">Pet Care</a></li>
+        <li class="nav-item"><a class="nav-link fw-semibold" href="../html/partnerships.html">Vet Partnerships</a></li>
+
+        <!-- BTN CART MOBILE -->
+        <li class="nav-item d-lg-none mt-3">
+          <a class="btn btn-appointment w-100">Book an appointment</a>
+        </li>
+
+        <li class="nav-item d-lg-none mt-3">
+        <a href="#" class="cart-link cart-circle" data-bs-toggle="offcanvas" data-bs-target="#cartPanel">
+    <i class="bi bi-cart"></i>
+    <span class="cart-badge badge rounded-pill">0</span>
+    </a>
+        </li>
+      </ul>
+
+      <!-- BTN CART DESKTOP -->
+      <div class="d-none d-lg-flex align-items-center gap-3 ms-3">
+        <a href="#" class="cart-link cart-circle" data-bs-toggle="offcanvas" data-bs-target="#cartPanel">
+          <i class="bi bi-cart"></i>
+          <span class="cart-badge badge rounded-pill bg-danger">0</span>
+        </a>
+
+        <a class="btn btn-appointment px-4">Book an appointment</a>
+      </div>
+
+    </div>
+  </div>
+</nav>
+
+<!-- SHOP HERO BANNER -->
+<section class="shop-hero container my-5">
+
+    <div class="shop-hero-wrapper">
+
+        <!-- Imagen / fondo gris oscuro -->
+        <div class="shop-hero-image"></div>
+
+        <!-- Caja de texto gris claro -->
+        <div class="shop-hero-textbox">
+            <h2 class="fw-bold">Welcome to Our Shop</h2>
+            <p class="text-muted m-0">
+                Find the best products for your furry, feathered, scaly and tiny friends.
+            </p>
+        </div>
+
+    </div>
+
+</section>
+
+    <!-- SIDE PANEL CART (OFFCANVAS) -->
+<div class="offcanvas offcanvas-end" tabindex="-1" id="cartPanel">
+    <div class="offcanvas-header">
+        <h5 class="offcanvas-title">Your Cart</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
+    </div>
+
+    <div class="offcanvas-body d-flex flex-column">
+
+        <!-- LIST of PRODUCTS -->
+        <div id="cartItems" class="flex-grow-1"></div>
+
+        <!-- TOTAL -->
+        <div class="border-top pt-3">
+            <div class="d-flex justify-content-between fw-bold fs-5">
+                <span>Total:</span>
+                <span id="cartTotal">$0.00</span>
+            </div>
+
+            <!-- BTN CHECKOUT -->
+            <button class="btn btn-success w-100 rounded-pill mt-3">
+                Checkout
+            </button>
+        </div>
+    </div>
+</div>
+
+<!-- HEADER -->
+<section class="container text-center my-5">
+    <h1 class="fw-bold">Shop</h1>
+    <p class="text-muted">Find the best items for your furry friends 🐾</p>
+
+    <!-- Search bar -->
+    <div class="col-md-6 mx-auto my-4">
+        <div class="input-group rounded-pill shadow-sm overflow-hidden">
+            <input type="text" class="form-control border-0" placeholder="Search products...">
+            <button class="btn btn-success px-4">Search</button>
+        </div>
+    </div>
+</section>
+
+<!-- SHOP BY PET -->
+<section id="shop" class="container my-5">
+    <h2 class="fw-bold mb-4">Shop by Pet</h2>
+
+    <div class="row g-4">
+
+        <!-- DOGS -->
+        <div class="col-12 col-sm-6 col-md-4">
+            <div class="pet-card2" data-category="dogs">
+                <img src="../images/dog-shop.png" class="pet-img">
+                <span class="pet-label">Dogs</span>
+            </div>
+        </div>
+
+        <!-- CATS -->
+        <div class="col-12 col-sm-6 col-md-4">
+            <div class="pet-card2" data-category="cats">
+                <img src="../images/cat-shop.png" class="pet-img">
+                <span class="pet-label">Cats</span>
+            </div>
+        </div>
+
+        <!-- AQUARIUM -->
+        <div class="col-12 col-sm-6 col-md-4">
+            <div class="pet-card2" data-category="aquarium">
+                <img src="../images/aquarium-shop.png" class="pet-img">
+                <span class="pet-label">Aquarium</span>
+            </div>
+        </div>
+
+        <!-- BIRDS -->
+        <div class="col-12 col-sm-6 col-md-4">
+            <div class="pet-card2" data-category="birds">
+                <img src="../images/birds-shop.png" class="pet-img">
+                <span class="pet-label">Birds</span>
+            </div>
+        </div>
+
+        <!-- SMALL PETS -->
+        <div class="col-12 col-sm-6 col-md-4">
+            <div class="pet-card2" data-category="smallpets">
+                <img src="../images/small-pets-shop.png" class="pet-img">
+                <span class="pet-label">Small Pets</span>
+            </div>
+        </div>
+
+        <!-- FARM -->
+        <div class="col-12 col-sm-6 col-md-4">
+            <div class="pet-card2" data-category="farm">
+                <img src="../images/farm-shop.png" class="pet-img">
+                <span class="pet-label">Farm Animals</span>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+ <!-- PRODUCTS -->
+    <section class="container my-5">
+    <div class="d-flex justify-content-between align-items-center mb-3">
+        <h2 class="fw-bold">Best Sellers</h2>
+    </div>
+
+    <!-- PRODUCT SLIDER -->
+<div class="product-slider d-flex overflow-auto gap-4">
+
+    <!-- PRODUCT 1 -->
+    <div class="product-card">
+    <img src="../catalog/dog-product1.jpg">
+    <h5 class="product-title">KONG goddie bone</h5>
+    <p class="product-desc">Engages dogs that delight in chew sessions</p>
+    <div class="price-cart">
+        <span>$14.00</span>
+        <i class="bi bi-cart add-to-cart" data-id="1"></i>
+    </div>
+</div>
+
+
+    <!-- PRODUCT 2 -->
+    <div class="product-card">
+    <img src="../catalog/dog-product2.jpg">
+    <h5 class="product-title">KONG Toughz bear</h5>
+    <p class="product-desc">Squeaky, and snuggly, all wrapped up in one toy!</p>
+    <div class="price-cart">
+        <span>$20.00</span>
+        <i class="bi bi-cart add-to-cart" data-id="2"></i>
+    </div>
+</div>
+
+
+    <!-- PRODUCT 3 -->
+    <div class="product-card">
+    <img src="../catalog/cat-product1.jpg">
+    <h5 class="product-title">SANICAT Classic</h5>
+    <p class="product-desc">Absorbent mineral litter for everyday hygiene and comfort</p>
+    <div class="price-cart">
+        <span>$8.00</span>
+        <i class="bi bi-cart add-to-cart" data-id="3"></i>
+    </div>
+</div>
+
+
+    <!-- PRODUCT 4 -->
+    <div class="product-card">
+    <img src="../catalog/cat-product2.jpg">
+    <h5 class="product-title">Cat Tree</h5>
+    <p class="product-desc">Luxury cat scratcher. 48 x 35 x 97 cm.</p>
+    <div class="price-cart">
+        <span>$150.00</span>
+        <i class="bi bi-cart add-to-cart" data-id="4"></i>
+    </div>
+</div>
+
+
+    <!-- PRODUCT 5 -->
+    <div class="product-card">
+    <img src="../catalog/aquarium-product1.jpg">
+    <h5 class="product-title">Pond Sticks</h5>
+    <p class="product-desc">Food product for the daily feeding of all pond fish</p>
+    <div class="price-cart">
+        <span>$6.00</span>
+        <i class="bi bi-cart add-to-cart" data-id="5"></i>
+    </div>
+</div>
+
+
+    <!-- PRODUCT 6 -->
+    <div class="product-card">
+    <img src="../catalog/aquarium-product2.jpg">
+    <h5 class="product-title">Fish Tank</h5>
+    <p class="product-desc">CIANO Aquarium 60 LED Fish Tank</p>
+    <div class="price-cart">
+        <span>$105.00</span>
+        <i class="bi bi-cart add-to-cart" data-id="6"></i>
+    </div>
+</div>
+
+
+    <!-- PRODUCT 7 -->
+    <div class="product-card">
+    <img src="../catalog/small-animals-product1.jpg">
+    <h5 class="product-title">Ferret food</h5>
+    <p class="product-desc"> Contains Taurine to maintain coat condition</p>
+    <div class="price-cart">
+        <span>$11.00</span>
+        <i class="bi bi-cart add-to-cart" data-id="7"></i>
+    </div>
+</div>
+
+
+    <!-- PRODUCT 8 -->
+    <div class="product-card">
+    <img src="../catalog/small-animals-product2.jpg">
+    <h5 class="product-title">Rabbit food</h5>
+    <p class="product-desc">Daily essential for all small herbivores </p>
+    <div class="price-cart">
+        <span>$21.00</span>
+        <i class="bi bi-cart add-to-cart" data-id="8"></i>
+    </div>
+</div>
+
+<!-- PRODUCT 9 -->
+    <div class="product-card">
+    <img src="../catalog/bird-product1.jpg">
+    <h5 class="product-title">Bird food</h5>
+    <p class="product-desc">Daily essential for all domestic birds </p>
+    <div class="price-cart">
+        <span>$15.00</span>
+        <i class="bi bi-cart add-to-cart" data-id="9"></i>
+    </div>
+</div>
+
+<!-- PRODUCT 10 -->
+    <div class="product-card">
+    <img src="../catalog/farm-product1.jpg">
+    <h5 class="product-title">Trainer Bag</h5>
+    <p class="product-desc">Trainer bag biscuits</p>
+    <div class="price-cart">
+        <span>$30.00</span>
+        <i class="bi bi-cart add-to-cart" data-id="10"></i>
+    </div>
+</div>
+
+
+</div>
+</section>
+
+
+<!-- LOAD MORE -->
+<div class="text-center my-5">
+    <button class="btn btn-outline-dark rounded-pill px-4 py-2">Load more</button>
+</div>
+
+<!-- FOOTER -->
+<footer class="text-center py-4 bg-light mt-5">
+    <small>© 2025 Happy Paws</small>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+<script src="js/ilianascript.js"></script>
+<script src="js/ilianascript.js"></script>
+
+<script>
+/* -----------------------------------------
+   AUTO APPLY FILTER WHEN COMING FROM HOME
+------------------------------------------ */
+
+document.addEventListener("DOMContentLoaded", () => {
+    const selectedCategory = localStorage.getItem("selectedCategory");
+
+    if (selectedCategory) {
+        const btn = document.querySelector(`[data-filter="${selectedCategory}"]`);
+        if (btn) btn.click();
+
+        localStorage.removeItem("selectedCategory");
+    }
+});
+</script>
+
+
+</body>
+</html>

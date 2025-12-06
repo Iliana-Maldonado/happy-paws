@@ -1,0 +1,632 @@
+/* ========================================
+    NAVBAR (floating + sticky)
+======================================== */
+
+.floating-nav {
+    position: absolute;
+    top: 0px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    padding: 10px 20px;
+    border-radius: 0px;
+
+    /* Style */
+    background: #3fae30;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+
+    transition: all 0.3s ease;
+    z-index: 1000;
+}
+
+/* Sticky version */
+.floating-nav.sticky {
+    position: fixed;
+    top: px;
+    background: #ef2464;
+    border: none;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.10);
+    backdrop-filter: none;
+}
+
+
+/* ========================================
+    NAVBAR — MOBILE MENU
+======================================== */
+
+/* Space for items */
+#navMenu .nav-link {
+    padding: 10px 0;
+}
+
+/* Button inside hamburger menu */
+#navMenu .btn {
+    padding: 12px;
+    font-size: 1rem;
+}
+
+/* Remove border & background of hamburger button */
+.navbar-toggler {
+    border: none !important;
+    box-shadow: none !important;
+    background: transparent !important;
+    padding: 0.4rem;
+}
+
+/* Remove the outline when clicking (focus) */
+.navbar-toggler:focus {
+    border: none !important;
+    box-shadow: none !important;
+    outline: none !important;
+}
+
+.navbar-toggler-icon {
+    filter: brightness(0) !important; /* black */
+}
+
+
+/* ========================================
+   CART ICON + BADGE (desktop & mobile)
+======================================== */
+
+/* container of the cart icon */
+.cart-link {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+}
+
+/* icon size */
+.cart-link .bi-cart {
+    color: black;
+    font-size: 1.4rem;
+}
+
+/* badge style */
+.cart-badge {
+    position: absolute;
+    top: -6px;
+    right: -6px;
+    font-size: 10px;
+    padding: 2px 5px;
+    line-height: 1;
+    background-color: #00afb5 !important;
+    color: white !important;
+
+}
+
+/* CART ICON AS CIRCLE */
+.cart-circle {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    background: #ffffff; 
+    backdrop-filter: blur(6px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid rgba(0,0,0,0.1);
+    position: relative;
+    transition: 0.25s ease;
+}
+
+/* hover */
+.cart-circle:hover {
+    transform: scale(1.08);
+    background: #ffffff;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+/* icon color */
+.cart-circle i {
+    color: #000 !important;
+    font-size: 1.1rem;
+}
+
+
+/* mobile tweaks */
+@media (max-width: 576px) {
+    .cart-link .bi-cart {
+        font-size: 1.3rem;
+    }
+
+    .cart-badge {
+        font-size: 9px;
+        padding: 1.5px 4px;
+        top: -3px;
+        right: -6px;
+    }
+}
+
+/* ========================================
+    BTN appointment (desktop & mobile)
+======================================== */
+
+/* BUTTON: Book an appointment */
+.btn-appointment {
+    background-color: white !important;   
+    color: #000 !important;                  
+    border: none !important;
+    padding: 10px 30px !important;
+    font-weight: 600;
+    border-radius: 999px;                  
+    transition: 0.3s ease;
+}
+
+.btn-appointment:hover {
+    background-color: #00C2CB !important;   
+}
+
+
+/* ========================================
+    HERO SLIDER
+======================================== */
+
+#heroSlider {
+    position: relative;
+    margin-top: 0;
+}
+
+.hero-slide {
+    height: 75vh;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding: 0 40px;
+    border-radius: 0px;
+}
+
+/* Slide images */
+.carousel-item:nth-child(1) .hero-slide {
+    background-image: url("../images/bluedog.jpg");
+}
+
+.carousel-item:nth-child(2) .hero-slide {
+    background-image: url("../images/orangecat.jpg");
+}
+
+.carousel-item:nth-child(3) .hero-slide {
+    background-image: url("../images/yellowdog.jpg");
+}
+
+/* Text shadow to increase readability */
+.hero-slide h1,
+.hero-slide p {
+    text-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
+}
+
+/* HERO responsive */
+@media (max-width: 768px) {
+    .hero-slide {
+        height: 55vh;
+        padding: 0 20px;
+    }
+
+    .hero-slide h1 {
+        font-size: 2rem !important;
+    }
+
+    .hero-slide p {
+        font-size: 1rem;
+    }
+}
+
+/* HERO BUTTON — outline */
+.hero-btn-outline {
+    border: 2px solid white !important;
+    color: white !important;
+    padding: 12px 32px !important;
+    font-weight: 600;
+    transition: 0.3s ease;
+}
+
+.hero-btn-outline:hover {
+    background-color: rgba(255,255,255,0.2) !important;
+}
+
+/* Hide hero carousel arrows */
+#heroSlider .carousel-control-prev,
+#heroSlider .carousel-control-next {
+    display: none !important;
+}
+
+/* ============================
+     SERVICES + PRICING
+=============================== */
+
+.services-section {
+    padding-top: 40px;
+}
+
+.services-hero {
+    position: relative;
+    text-align: center;
+    padding: 40px 20px;
+    border-radius: 25px;
+}
+
+.services-hero-img {
+    width: 160px;
+    margin-top: 15px;
+    opacity: 0.9;
+}
+
+
+.services-title {
+    font-size: 2rem;
+    font-weight: 800;
+}
+
+.services-text {
+    font-size: 1rem;
+    color: #666;
+}
+
+/* CARDS */
+.service-card {
+    background: #3fae30;
+    padding: 25px;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 0 5px 18px rgba(0,0,0,0.08);
+    transition: 0.3s;
+}
+
+.service-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 8px 22px rgba(0,0,0,0.12);
+}
+
+.service-icon {
+    width: 65px;
+    margin-bottom: 15px;
+}
+
+.service-price {
+    font-size: 1.8rem;
+    font-weight: 700;
+}
+
+.service-price span {
+    font-size: 0.9rem;
+    font-weight: 400;
+    color: #fff;
+}
+
+.service-name {
+    font-size: 1.2rem;
+    margin: 10px 0;
+}
+
+.service-desc {
+    color: #fff;
+    font-size: 0.95rem;
+    min-height: 60px;
+}
+
+/* Button */
+.btn-service {
+    background: #00C2CB;
+    color: white;
+    padding: 10px;
+    border-radius: 40px;
+    font-size: 1rem;
+    transition: 0.2s;
+}
+
+.btn-service:hover {
+    background: #ef2464;
+}
+
+
+/* ========================================
+         SHOP BY PET
+======================================== */
+
+.pet-card2 {
+    position: relative;
+    border-radius: 20px;
+    overflow: hidden;
+    cursor: pointer;
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.pet-card2 img.pet-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(1);
+    transition: 0.3s ease;
+}
+
+.pet-card2:hover img.pet-img {
+    filter: brightness(0.6);
+}
+
+.pet-label {
+    position: absolute;
+    z-index: 2;
+    color: white;
+    font-size: 1.4rem;
+    font-weight: 700;
+    text-shadow: 0 4px 15px rgba(0,0,0,0.5);
+}
+
+/* MOBILE CAROUSEL OPTION — same behavior */
+@media (max-width: 768px) {
+    .row.g-4 {
+        display: flex;
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+    }
+    .row.g-4 > div {
+        flex: 0 0 80%;
+        scroll-snap-align: center;
+    }
+    .row.g-4::-webkit-scrollbar {
+        display: none;
+    }
+}
+
+
+
+/* ========================================
+    PRODUCT CARDS
+======================================== */
+
+/* Featured Products Card */
+.product-slider {
+    padding-bottom: 10px;
+}
+
+.product-card {
+    min-width: 230px;
+    background: #00C2CB;
+    border-radius: 30px;
+    padding: 15px;
+    /*box-shadow: 0 4px 20px rgba(0,0,0,0.08);*/
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+ .product-card:hover {
+    /*transform: translateY(-6px);*/
+    box-shadow: 0 8px 26px rgba(0,0,0,0.12);
+}
+
+/* Images */
+.product-card img {
+    width: 100%;
+    height: 230px;
+    object-fit: cover;
+    border-radius: 25px;
+}
+
+/* Titles & description */
+.product-title {
+    font-weight: 700;
+    margin-top: 15px;
+}
+
+.product-desc {
+    font-size: 0.85rem;
+    color: white;
+    margin-bottom: 12px;
+}
+
+/* Price + cart bubble */
+.price-cart {
+    background: #3fae30;
+    border-radius: 30px;
+    padding: 8px 14px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    border: 1px solid rgba(0,0,0,0.1);
+}
+
+.price-cart span {
+    font-weight: 600;
+}
+
+.price-cart i {
+    font-size: 1.1rem;
+    cursor: pointer;
+}
+
+/* Hide scrollbar but keep scrolling functionality */
+.product-slider::-webkit-scrollbar {
+    display: none;
+}
+
+.product-slider {
+    -ms-overflow-style: none;  /* IE & Edge */
+    scrollbar-width: none;     /* Firefox */
+}
+
+/* ========================================
+    APPOINTMENT FORM
+======================================== */
+
+/* APPOINTMENT — Background Image */
+/* Background with image */
+.appointment-section {
+    background-image: url("../images/bluedog.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 25px;
+    padding: 90px 40px !important;  /* MÁS ALTO */
+    position: relative;
+    overflow: hidden;
+    min-height: 630px;  /* NUEVA ALTURA */
+}
+
+/* Overlay */
+.appointment-section::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    backdrop-filter: blur(1px);
+}
+
+/* Content wrapper to keep original size */
+.appointment-inner {
+    max-width: 900px;     
+    margin: 0 auto;   
+    position: relative;
+    z-index: 2;
+    text-align: left;     
+}
+
+/* Title size */
+.appointment-inner h2 {
+    font-size: 2.3rem;
+    font-weight: 800;
+}
+
+/* Input sizes */
+.appointment-inner .form-control {
+    font-size: 1rem;
+    padding: 10px 18px;
+    border-radius: 30px;
+}
+
+/* Button */
+.appointment-inner button {
+    background: #3fae30 !important;
+    border: none;
+    border-radius: 30px;
+    padding: 10px;
+    font-size: 1.1rem;
+}
+
+.appointment-inner button:hover {
+    background: #ef2464 !important;
+}
+
+/* =============================
+        WHY CHOOSE US / ABOUT
+================================ */
+.choose-section {
+    border-radius: 0px;
+    padding: 60px 40px;
+}
+
+.choose-title {
+    font-size: 2rem;
+    font-weight: 800;
+    margin-bottom: 15px;
+}
+
+.choose-description {
+    color: black;
+    font-size: 1rem;
+    margin-bottom: 25px;
+    line-height: 1.6;
+}
+
+/* LIST */
+.choose-list {
+    list-style: none;
+    padding: 0;
+}
+
+.choose-list li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    font-size: 1.05rem;
+    font-weight: 500;
+    color: #444;
+}
+
+.choose-icon {
+    width: 32px;
+    margin-right: 12px;
+}
+
+/* IMAGE */
+.choose-image {
+    width: 90%;
+    max-width: 650px;
+    max-height: 650px;
+    opacity: 0.95;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .choose-section {
+        padding: 40px 20px;
+        text-align: center;
+    }
+    
+    .choose-list li {
+        justify-content: center;
+        text-align: center;
+    }
+
+    .choose-icon {
+        margin-right: 8px;
+    }
+}
+
+
+/* ========================================
+    REVIEW CARDS
+======================================== */
+
+.review-card {
+    background: #3fae30;
+    border-radius: 25px;
+    padding: 25px 20px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    text-align: center;
+    transition: 0.3s ease;
+}
+
+/* Center Card */
+.review-card-highlight {
+    background: #3fae30;
+}
+
+/* Photo */
+.review-avatar {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-top: -10px;
+    margin-bottom: 10px;
+}
+
+/* Date */
+.review-date {
+    font-size: 0.8rem;
+    color: white;
+}
+
+/* Text */
+.review-text {
+    font-size: 0.95rem;
+    color: white;
+    min-height: 80px;
+    margin-bottom: 15px;
+}
+
+/* Name */
+.review-name {
+    font-weight: 700;
+    margin-top: 5px;
+}
+
+.review-age {
+    font-size: 0.8rem;
+    color: white;
+}

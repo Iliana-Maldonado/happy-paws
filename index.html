@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Paws</title>
+
+    <!-- Bootstrap 5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+
+<!-- Iliana CSS -->
+<link rel="stylesheet" href="css/styleiliana.css">
+
+<!-- Gaby CSS -->
+<!-- <link rel="stylesheet" href="css/stylegaby.css"> --> 
+
+<!-- Nardy CSS -->
+<!-- <link rel="stylesheet" href="css/stylesnardy.css"> -->
+
+<!-- Group CSS -->
+<!-- <link rel="stylesheet" href="css/stylegroup1.css"> -->
+
+</head>
+<body>
+    <!-- NAV -->
+    <nav class="navbar navbar-expand-lg floating-nav" id="mainNav">
+  <div class="container-fluid px-4">
+
+    <!-- LOGO -->
+    <a class="navbar-brand d-flex align-items-center" href="index.html">
+      <span class="fs-4">🐾</span>
+      <strong class="ms-2">Happy Paws</strong>
+    </a>
+
+    <!-- HAMBURGER -->
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- MENU -->
+    <div class="collapse navbar-collapse" id="navMenu">
+
+      <!-- LINKS -->
+      <ul class="navbar-nav mx-auto align-items-lg-center gap-3">
+        <li class="nav-item"><a class="nav-link fw-semibold" href="html/shop.html">Shop</a></li>
+        <li class="nav-item"><a class="nav-link fw-semibold" href="html/grooming.html">Pet Grooming</a></li>
+        <li class="nav-item"><a class="nav-link fw-semibold" href="html/petservices.html">Pet Care</a></li>
+        <li class="nav-item"><a class="nav-link fw-semibold" href="html/partnerships.html">Vet Partnerships</a></li>
+
+        <!-- BTN CART MOBILE -->
+        <li class="nav-item d-lg-none mt-3">
+          <a class="btn btn-appointment w-100" href="html/contactus.html">Book an appointment</a>
+        </li>
+
+        <li class="nav-item d-lg-none mt-3">
+        <a href="#" class="cart-link cart-circle" data-bs-toggle="offcanvas" data-bs-target="#cartPanel">
+    <i class="bi bi-cart"></i>
+    <span class="cart-badge badge rounded-pill">0</span>
+    </a>
+        </li>
+      </ul>
+
+      <!-- BTN CART DESKTOP -->
+      <div class="d-none d-lg-flex align-items-center gap-3 ms-3">
+        <a href="#" class="cart-link cart-circle" data-bs-toggle="offcanvas" data-bs-target="#cartPanel">
+          <i class="bi bi-cart"></i>
+          <span class="cart-badge badge rounded-pill bg-danger">0</span>
+        </a>
+
+        <a class="btn btn-appointment px-4" href="html/contactus.html">Book an appointment</a>
+      </div>
+
+    </div>
+  </div>
+</nav>
+
+    <!-- SIDE PANEL CART (OFFCANVAS) -->
+<div class="offcanvas offcanvas-end" tabindex="-1" id="cartPanel">
+    <div class="offcanvas-header">
+        <h5 class="offcanvas-title">Your Cart</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
+    </div>
+
+    <div class="offcanvas-body d-flex flex-column">
+
+        <!-- LIST of PRODUCTS -->
+        <div id="cartItems" class="flex-grow-1"></div>
+
+        <!-- TOTAL -->
+        <div class="border-top pt-3">
+            <div class="d-flex justify-content-between fw-bold fs-5">
+                <span>Total:</span>
+                <span id="cartTotal">$0.00</span>
+            </div>
+
+            <!-- BTN CHECKOUT -->
+            <button id="checkoutBtn" class="btn btn-success w-100 rounded-pill mt-3">
+            Checkout
+            </button>
+
+        </div>
+    </div>
+</div>
+
+
+    <!-- HERO SLIDER -->
+<div id="heroSlider" class="carousel slide" data-bs-ride="carousel">
+
+    <!-- INDICATORS -->
+    <div class="carousel-indicators">
+        <button type="button" data-bs-target="#heroSlider" data-bs-slide-to="0" class="active"></button>
+        <button type="button" data-bs-target="#heroSlider" data-bs-slide-to="1"></button>
+        <button type="button" data-bs-target="#heroSlider" data-bs-slide-to="2"></button>
+    </div>
+
+    <!-- SLIDES -->
+    <div class="carousel-inner">
+
+        <!-- SLIDE 1 -->
+        <div class="carousel-item active">
+            <div class="hero-slide d-flex align-items-center">
+                <div class="container text-white">
+                    <h1 class="display-4 fw-bold">Care for every Happy Paw</h1>
+                    <p class="lead">Grooming, food, toys & full pet support.</p>
+                    <a class="btn hero-btn-outline rounded-pill ms-3" href="html/shop.html">Shop now</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- SLIDE 2 -->
+        <div class="carousel-item">
+            <div class="hero-slide d-flex align-items-center">
+                <div class="container text-white">
+                    <h1 class="display-4 fw-bold">Everything your pet needs</h1>
+                    <p class="lead">Toys, treats, grooming kits & more.</p>
+                    <a class="btn hero-btn-outline rounded-pill ms-3" href="html/grooming.html">Explore</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- SLIDE 3 -->
+        <div class="carousel-item">
+            <div class="hero-slide d-flex align-items-center">
+                <div class="container text-white">
+                    <h1 class="display-4 fw-bold">Vet care made simple</h1>
+                    <p class="lead">Professional check-ups & pet wellness.</p>
+                    <a class="btn hero-btn-outline rounded-pill ms-3" href="html/contactus.html">Make an appointment</a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Arrows -->
+    <button class="carousel-control-prev" type="button" data-bs-target="#heroSlider" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon"></span>
+    </button>
+
+    <button class="carousel-control-next" type="button" data-bs-target="#heroSlider" data-bs-slide="next">
+        <span class="carousel-control-next-icon"></span>
+    </button>
+
+</div>
+
+<!-- SERVICES + PRICING SECTION -->
+<section class="services-section container my-5">
+
+    <!-- Top illustration background -->
+<div class="services-hero">
+    <h2 class="services-title">All-in-One Care for Your Pets Needs</h2>
+    <p class="services-text">From head to tail, we have got them covered.</p>
+
+    <a class="btn btn-service px-4" href="html/partnerships.html">
+        Vet Partnerships
+    </a>
+</div>
+
+
+    <!-- 3 services cards -->
+    <div class="row g-4 mt-4 mobile-carousel">
+
+        <!-- CARD 1 -->
+        <div class="col-12 col-md-4">
+            <div class="service-card">
+                <img src="images/pet-shop-icon.png" class="service-icon">
+
+                <h3 class="service-price">$45 <span>/ visit</span></h3>
+                <h4 class="service-name">Basic Veterinary Care</h4>
+                <p class="service-desc">
+                    General health check, nail trim, weight & wellness assessment.
+                </p>
+
+                <button class="btn btn-service w-100">Pet Care</button>
+            </div>
+        </div>
+
+        <!-- CARD 2 -->
+        <div class="col-12 col-md-4">
+            <div class="service-card">
+                <img src="images/soap-bottle-icon.png" class="service-icon">
+
+                <h3 class="service-price">$90 <span>/ visit</span></h3>
+                <h4 class="service-name">Full Groom & Care</h4>
+                <p class="service-desc">
+                    All basic care features, full grooming & bath, teeth cleaning, ear care.
+                </p>
+
+                <button class="btn btn-service w-100">Pet Grooming</button>
+            </div>
+        </div>
+
+        <!-- CARD 3 -->
+        <div class="col-12 col-md-4">
+            <div class="service-card">
+                <img src="images/veterinarian-icon.png" class="service-icon">
+
+                <h3 class="service-price">$250 <span>/ visit</span></h3>
+                <h4 class="service-name">Premium Wellness Plan</h4>
+                <p class="service-desc">
+                    Unlimited check-ups, priority reservations, 24/7 emergency care.
+                </p>
+
+                <button class="btn btn-service w-100">Vet Partnerships</button>
+            </div>
+        </div>
+
+    </div>
+
+</section>
+
+
+    <!-- SHOP BY PET -->
+<section id="shop" class="container my-5">
+    <h2 class="fw-bold mb-4">Shop by Pet</h2>
+
+    <div class="row g-4">
+
+        <!-- DOGS -->
+        <div class="col-12 col-sm-6 col-md-4">
+            <div class="pet-card2" data-category="dogs">
+                <img src="images/dog-shop.png" class="pet-img">
+                <span class="pet-label">Dogs</span>
+            </div>
+        </div>
+
+        <!-- CATS -->
+        <div class="col-12 col-sm-6 col-md-4">
+            <div class="pet-card2" data-category="cats">
+                <img src="images/cat-shop.png" class="pet-img">
+                <span class="pet-label">Cats</span>
+            </div>
+        </div>
+
+        <!-- AQUARIUM -->
+        <div class="col-12 col-sm-6 col-md-4">
+            <div class="pet-card2" data-category="aquarium">
+                <img src="images/aquarium-shop.png" class="pet-img">
+                <span class="pet-label">Aquarium</span>
+            </div>
+        </div>
+
+        <!-- BIRDS -->
+        <div class="col-12 col-sm-6 col-md-4">
+            <div class="pet-card2" data-category="birds">
+                <img src="images/birds-shop.png" class="pet-img">
+                <span class="pet-label">Birds</span>
+            </div>
+        </div>
+
+        <!-- SMALL PETS -->
+        <div class="col-12 col-sm-6 col-md-4">
+            <div class="pet-card2" data-category="smallpets">
+                <img src="images/small-pets-shop.png" class="pet-img">
+                <span class="pet-label">Small Pets</span>
+            </div>
+        </div>
+
+        <!-- FARM -->
+        <div class="col-12 col-sm-6 col-md-4">
+            <div class="pet-card2" data-category="farm">
+                <img src="images/farm-shop.png" class="pet-img">
+                <span class="pet-label">Farm Animals</span>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+    <!-- PRODUCTS -->
+    <section class="container my-5">
+    <div class="d-flex justify-content-between align-items-center mb-3">
+        <h2 class="fw-bold">Best Sellers</h2>
+    </div>
+
+    <!-- PRODUCT SLIDER -->
+<div class="product-slider d-flex overflow-auto gap-4">
+
+    <!-- PRODUCT 1 -->
+    <div class="product-card">
+    <img src="catalog/dog-product1.jpg">
+    <h5 class="product-title">KONG goddie bone</h5>
+    <p class="product-desc">Engages dogs that delight in chew sessions</p>
+    <div class="price-cart">
+        <span>$14.00</span>
+        <i class="bi bi-cart add-to-cart" data-id="1"></i>
+    </div>
+</div>
+
+
+    <!-- PRODUCT 2 -->
+    <div class="product-card">
+    <img src="catalog/dog-product2.jpg">
+    <h5 class="product-title">KONG Toughz bear</h5>
+    <p class="product-desc">Squeaky, and snuggly, all wrapped up in one toy!</p>
+    <div class="price-cart">
+        <span>$20.00</span>
+        <i class="bi bi-cart add-to-cart" data-id="2"></i>
+    </div>
+</div>
+
+
+    <!-- PRODUCT 3 -->
+    <div class="product-card">
+    <img src="catalog/cat-product1.jpg">
+    <h5 class="product-title">SANICAT Classic</h5>
+    <p class="product-desc">Absorbent mineral litter for everyday hygiene and comfort</p>
+    <div class="price-cart">
+        <span>$8.00</span>
+        <i class="bi bi-cart add-to-cart" data-id="3"></i>
+    </div>
+</div>
+
+
+    <!-- PRODUCT 4 -->
+    <div class="product-card">
+    <img src="catalog/cat-product2.jpg">
+    <h5 class="product-title">Cat Tree</h5>
+    <p class="product-desc">Luxury cat scratcher. 48 x 35 x 97 cm.</p>
+    <div class="price-cart">
+        <span>$150.00</span>
+        <i class="bi bi-cart add-to-cart" data-id="4"></i>
+    </div>
+</div>
+
+
+    <!-- PRODUCT 5 -->
+    <div class="product-card">
+    <img src="catalog/aquarium-product1.jpg">
+    <h5 class="product-title">Pond Sticks</h5>
+    <p class="product-desc">Food product for the daily feeding of all pond fish</p>
+    <div class="price-cart">
+        <span>$6.00</span>
+        <i class="bi bi-cart add-to-cart" data-id="5"></i>
+    </div>
+</div>
+
+
+    <!-- PRODUCT 6 -->
+    <div class="product-card">
+    <img src="catalog/aquarium-product2.jpg">
+    <h5 class="product-title">Fish Tank</h5>
+    <p class="product-desc">CIANO Aquarium 60 LED Fish Tank</p>
+    <div class="price-cart">
+        <span>$105.00</span>
+        <i class="bi bi-cart add-to-cart" data-id="6"></i>
+    </div>
+</div>
+
+
+    <!-- PRODUCT 7 -->
+    <div class="product-card">
+    <img src="catalog/small-animals-product1.jpg">
+    <h5 class="product-title">Ferret food</h5>
+    <p class="product-desc"> Contains Taurine to maintain coat condition</p>
+    <div class="price-cart">
+        <span>$11.00</span>
+        <i class="bi bi-cart add-to-cart" data-id="7"></i>
+    </div>
+</div>
+
+
+    <!-- PRODUCT 8 -->
+    <div class="product-card">
+    <img src="catalog/small-animals-product2.jpg">
+    <h5 class="product-title">Rabbit food</h5>
+    <p class="product-desc">Daily essential for all small herbivores </p>
+    <div class="price-cart">
+        <span>$21.00</span>
+        <i class="bi bi-cart add-to-cart" data-id="8"></i>
+    </div>
+</div>
+
+<!-- PRODUCT 9 -->
+    <div class="product-card">
+    <img src="catalog/bird-product1.jpg">
+    <h5 class="product-title">Bird food</h5>
+    <p class="product-desc">Daily essential for all domestic birds </p>
+    <div class="price-cart">
+        <span>$15.00</span>
+        <i class="bi bi-cart add-to-cart" data-id="9"></i>
+    </div>
+</div>
+
+<!-- PRODUCT 10 -->
+    <div class="product-card">
+    <img src="catalog/farm-product1.jpg">
+    <h5 class="product-title">Trainer Bag</h5>
+    <p class="product-desc">Trainer bag biscuits</p>
+    <div class="price-cart">
+        <span>$30.00</span>
+        <i class="bi bi-cart add-to-cart" data-id="10"></i>
+    </div>
+</div>
+
+
+</div>
+</section>
+
+    <!-- BOOK APPOINTMENT -->
+    <section id="appointment" class="appointment-section container my-5 rounded-4 text-white">
+
+    <div class="appointment-inner">
+        <h2 class="fw-bold mb-4">BOOK AN APPOINTMENT</h2>
+
+        <form class="row g-3">
+            <div class="col-md-6">
+                <input type="text" class="form-control rounded-pill" placeholder="Your name">
+            </div>
+
+            <div class="col-md-6">
+                <input type="email" class="form-control rounded-pill" placeholder="Email">
+            </div>
+
+            <div class="col-md-6">
+                <input type="text" class="form-control rounded-pill" placeholder="Pet's name">
+            </div>
+
+            <div class="col-md-6">
+                <input type="number" class="form-control rounded-pill" placeholder="phone">
+            </div>
+
+            <div class="col-md-6">
+                <input type="text" class="form-control rounded-pill" placeholder="Address">
+            </div>
+
+            <div class="col-md-6">
+                <input type="date" class="form-control rounded-pill">
+            </div>
+
+            <div class="col-12">
+                <button class="btn btn-success rounded-pill px-5">Confirm booking</button>
+            </div>
+        </form>
+    </div>
+
+</section>
+
+<!-- WHY CHOOSE US / ABOUT -->
+<section class="choose-section container my-5 py-5">
+
+    <div class="row align-items-center">
+
+        <!-- TEXT SIDE -->
+        <div class="col-12 col-md-6">
+
+            <h2 class="choose-title">Why Choose Happy Paws?</h2>
+
+            <p class="choose-description">
+                At Happy Paws, we believe every pet deserves exceptional care.
+                With years of experience, friendly staff, and a passion for animals,
+                we offer stress-free grooming, reliable vet support, and personalized
+                attention for every furry, feathered, or scaly friend.
+            </p>
+
+            <ul class="choose-list">
+                <li>
+                    <img src="images/star.png" class="choose-icon">
+                    Professional & Certified Staff
+                </li>
+                <li>
+                    <img src="images/pet-supplies.png" class="choose-icon">
+                    Safe, Clean & Pet-Friendly Facilities
+                </li>
+                <li>
+                    <img src="images/pawprint.png" class="choose-icon">
+                    Personalized Grooming & Wellness Plans
+                </li>
+                <li>
+                    <img src="images/heart.png" class="choose-icon">
+                    Love, Care & Compassion Always
+                </li>
+            </ul>
+
+        </div>
+
+        <!-- IMAGE SIDE -->
+        <div class="col-12 col-md-6 text-center">
+            <img 
+                src="images/choose.png" 
+                alt="Happy pets illustration"
+                class="choose-image">
+        </div>
+
+    </div>
+
+</section>
+
+
+
+    <!-- REVIEWS -->
+    <section class="container my-5 text-center">
+    <h2 class="fw-bold mb-4">What our clients say</h2>
+
+    <div class="row g-4 justify-content-center mobile-carousel">
+
+        <!-- REVIEW 1 -->
+        <div class="col-12 col-md-4">
+            <div class="review-card">
+                <img src="https://randomuser.me/api/portraits/women/32.jpg" class="review-avatar">
+                <p class="review-date">15 Apr 2023</p>
+                <div class="stars">🐾🐾🐾🐾</div>
+
+                <p class="review-text">
+                    The staff was incredibly friendly and my dog looked amazing after grooming.
+                    Truly the best pet service I’ve found!
+                </p>
+
+                <div class="review-name">Sara Lopez</div>
+                <div class="review-age">29 years</div>
+            </div>
+        </div>
+
+        <!-- REVIEW 2 -->
+        <div class="col-12 col-md-4">
+            <div class="review-card review-card-highlight">
+                <img src="https://randomuser.me/api/portraits/men/35.jpg" class="review-avatar">
+                <p class="review-date">03 May 2023</p>
+                <div class="stars">🐾🐾🐾🐾🐾</div>
+
+                <p class="review-text">
+                    I always bring my cat here for his checkups. They treat him with so much care.
+                    Highly recommended!
+                </p>
+
+                <div class="review-name">Daniel Cruz</div>
+                <div class="review-age">34 years</div>
+            </div>
+        </div>
+
+        <!-- REVIEW 3 -->
+        <div class="col-12 col-md-4">
+            <div class="review-card">
+                <img src="https://randomuser.me/api/portraits/women/60.jpg" class="review-avatar">
+                <p class="review-date">20 Feb 2023</p>
+                <div class="stars">🐾🐾🐾🐾🐾</div>
+
+                <p class="review-text">
+                    My rabbit was treated wonderfully! The team is kind, patient, and very professional.
+                </p>
+
+                <div class="review-name">Emily Turner</div>
+                <div class="review-age">26 years</div>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+
+    <!-- FOOTER -->
+<footer class="text-center py-4 bg-light mt-5">
+    <small>© 2025 Happy Paws</small>
+</footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script src="js/ilianascript.js"></script>
+
+</body>
+</html>

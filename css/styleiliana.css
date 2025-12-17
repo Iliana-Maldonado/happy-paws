@@ -97,6 +97,44 @@
 
 }
 
+.cart-item {
+    border-bottom: 1px solid #eee;
+    padding-bottom: 10px;
+}
+
+.cart-img {
+    width: 55px;
+    height: 55px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.cart-name {
+    font-weight: 600;
+    line-height: 1.2;
+}
+
+.cart-price {
+    font-size: 0.9rem;
+    color: #666;
+}
+
+/* BTN CHECKOUT */
+
+.checkout-btn {
+    background: #f13554;
+    color: white;
+    border: none;
+    padding: 12px;
+    font-weight: 600;
+    border-radius: 30px;
+}
+
+.checkout-btn:hover {
+    background: #f59e0b;
+}
+
+
 /* CART ICON AS CIRCLE */
 .cart-circle {
     width: 38px;

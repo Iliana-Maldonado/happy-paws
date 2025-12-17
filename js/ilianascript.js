@@ -1,13 +1,16 @@
 // NAVBAR STICKY
 const nav = document.getElementById("mainNav");
 
-window.addEventListener("scroll", () => {
-    if (window.scrollY > 50) {
-        nav.classList.add("sticky");
-    } else {
-        nav.classList.remove("sticky");
-    }
-});
+if (nav) {
+    window.addEventListener("scroll", () => {
+        if (window.scrollY > 50) {
+            nav.classList.add("sticky");
+        } else {
+            nav.classList.remove("sticky");
+        }
+    });
+}
+
 
 // SELECTOR for all badges
 const cartBadges = document.querySelectorAll(".cart-badge");
@@ -156,7 +159,7 @@ document.querySelectorAll(".pet-card2").forEach(card => {
         // Save category selected
         localStorage.setItem("selectedCategory", category);
 
-        window.location.href = "shop.html";
+        window.location.href = "html/shop.html";
     });
 });
 
@@ -174,38 +177,69 @@ document.querySelectorAll(".add-to-cart").forEach(btn => {
 
         cart.push(product);
         updateCart();
+
+        // feedback visual
+        btn.classList.add("text-success");
+        setTimeout(() => btn.classList.remove("text-success"), 300);
     });
 });
 
+
 function updateCart() {
-    // Update count
+
+    // Update badge
     updateCartBadge(cart.length);
 
-    // Generate HTML list
+    // Clear previous items
     cartItemsContainer.innerHTML = "";
+
+    // EMPTY CART
+    if (cart.length === 0) {
+        cartItemsContainer.innerHTML = `
+            <p class="text-muted text-center mt-4">
+                Your cart is empty 🐾
+            </p>
+        `;
+        cartTotalDisplay.textContent = "$0.00";
+        return; // stop function
+    }
 
     let total = 0;
 
+    // Generate cart items
     cart.forEach(item => {
         total += item.price;
 
         cartItemsContainer.innerHTML += `
-            <div class="d-flex justify-content-between align-items-center mb-3">
-                <img src="${item.img}" width="60" class="rounded">
-                <div class="ms-2">
-                    <strong>${item.name}</strong><br>
-                    $${item.price}
-                </div>
-                <button class="btn btn-sm btn-danger remove-item" data-id="${item.id}">X</button>
+          <div class="cart-item d-flex align-items-center mb-3">
+
+            <img src="${item.img}" class="cart-img">
+
+            <div class="cart-info flex-grow-1 ms-3">
+                <div class="cart-name">${item.name}</div>
+                <div class="cart-price">$${item.price}</div>
             </div>
+
+            <button class="btn btn-sm btn-danger remove-item" data-id="${item.id}">
+                ✕
+            </button>
+
+          </div>
         `;
     });
 
-    // Total
+    // Update total
     cartTotalDisplay.textContent = "$" + total.toFixed(2);
 
+    // Enable remove buttons
     enableRemoveButtons();
+
+const checkoutBtn = document.getElementById("checkoutBtn");
+if (checkoutBtn) {
+    checkoutBtn.disabled = cart.length === 0;
 }
+}
+
 
 // Remove items
 function enableRemoveButtons() {
@@ -242,3 +276,54 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 });
 
+
+/* -----------------------------------------
+              BOOKING FORM
+------------------------------------------ */
+document.addEventListener("DOMContentLoaded", () => {
+
+    const form = document.getElementById("bookingForm");
+
+    if (!form) {
+        console.error("❌ bookingForm not found");
+        return;
+    }
+
+    // Phone: only numbers
+    const phoneInput = document.getElementById("phone");
+    if (phoneInput) {
+        phoneInput.addEventListener("input", function () {
+            this.value = this.value.replace(/[^0-9]/g, "");
+        });
+    }
+
+    form.addEventListener("submit", function (e) {
+        e.preventDefault(); //  evita el refresh
+
+        const emailInput = document.getElementById("email");
+
+        if (!emailInput.checkValidity()) {
+            emailInput.classList.add("is-invalid");
+            return;
+        } else {
+            emailInput.classList.remove("is-invalid");
+        }
+
+        // Fill modal
+        document.getElementById("modalContent").innerHTML = `
+            <p><strong>Name:</strong> ${document.getElementById("name").value}</p>
+            <p><strong>Pet:</strong> ${document.getElementById("pet").value}</p>
+            <p><strong>Phone:</strong> ${phoneInput.value}</p>
+            <p><strong>Date:</strong> ${document.getElementById("date").value}</p>
+            <p class="mt-3">We will contact you soon 🐾</p>
+        `;
+
+        const modal = new bootstrap.Modal(
+            document.getElementById("bookingModal")
+        );
+        modal.show();
+
+        form.reset();
+    });
+
+});
